@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NLabel.h"
 
 @interface NotificationTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
-@property (strong, nonatomic) IBOutlet UILabel *alertLabel;
+@property (strong, nonatomic) IBOutlet NLabel *alertLabel;
 
 @end

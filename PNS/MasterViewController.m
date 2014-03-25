@@ -9,10 +9,14 @@
 #import "MasterViewController.h"
 #import "Notification.h"
 #import "NotificationTableViewCell.h"
+#import "AppDelegate.h"
+
+#define PNS_REMOVE_URL @"http://dev.uek.krakow.pl:4567/remove"
 
 @interface MasterViewController ()
 
 @property (strong, nonatomic) NotificationTableViewCell *prototypeCell;
+
 - (void)configureCell:(NotificationTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 
 @end
@@ -199,8 +203,11 @@
 - (void)configureCell:(NotificationTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     Notification *notification = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.dateLabel.text = [notification.timeStamp description];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd-MM-YYYY, HH:mm"];
+    cell.dateLabel.text = [[formatter stringFromDate:notification.timeStamp] capitalizedString];
     cell.alertLabel.text = notification.alert;
+    [cell.alertLabel.layer setCornerRadius:5];
 }
 
 - (void)fetchAllNotifications
@@ -211,6 +218,24 @@
     
     NSArray *result = [self.managedObjectContext executeFetchRequest:request error:nil];
     NSLog(@"%@", result);
+}
+
+- (IBAction)register:(UIBarButtonItem *)sender
+{
+    AppDelegate *del = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    NSDictionary *params = @{@"id": del.deviceToken};
+    
+    [[AFHTTPRequestOperationManager manager] DELETE:PNS_REMOVE_URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"HasAlreadyLaunched"];
+        if (![[NSUserDefaults standardUserDefaults] synchronize]) {
+            NSLog(@"Couldn't save the information about the first run");
+        }
+        
+        [sender setEnabled:FALSE];
+
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", [error localizedDescription]);
+    }];
 }
 
 @end
