@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7019D71118E0DE17002A7FC0 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 7019D71018E0DE17002A7FC0 /* Notification.m */; };
 		7019D71518E1C4B1002A7FC0 /* NotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7019D71318E1C4B1002A7FC0 /* NotificationTableViewCell.m */; };
+		7019D71F18E2127F002A7FC0 /* NLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7019D71E18E2127F002A7FC0 /* NLabel.m */; };
+		7019D72118E215BE002A7FC0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7019D72018E215BE002A7FC0 /* QuartzCore.framework */; };
 		70EB074218E08C030006E6A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70EB074118E08C030006E6A7 /* Foundation.framework */; };
 		70EB074418E08C030006E6A7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70EB074318E08C030006E6A7 /* CoreGraphics.framework */; };
 		70EB074618E08C030006E6A7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70EB074518E08C030006E6A7 /* UIKit.framework */; };
@@ -46,6 +48,9 @@
 		7019D71018E0DE17002A7FC0 /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notification.m; sourceTree = "<group>"; };
 		7019D71218E1C4B1002A7FC0 /* NotificationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationTableViewCell.h; sourceTree = "<group>"; };
 		7019D71318E1C4B1002A7FC0 /* NotificationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationTableViewCell.m; sourceTree = "<group>"; };
+		7019D71D18E2127F002A7FC0 /* NLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLabel.h; sourceTree = "<group>"; };
+		7019D71E18E2127F002A7FC0 /* NLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLabel.m; sourceTree = "<group>"; };
+		7019D72018E215BE002A7FC0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		70EB073E18E08C030006E6A7 /* PNS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PNS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70EB074118E08C030006E6A7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		70EB074318E08C030006E6A7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -74,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7019D72118E215BE002A7FC0 /* QuartzCore.framework in Frameworks */,
 				70EB074418E08C030006E6A7 /* CoreGraphics.framework in Frameworks */,
 				70EB074818E08C030006E6A7 /* CoreData.framework in Frameworks */,
 				70EB074618E08C030006E6A7 /* UIKit.framework in Frameworks */,
@@ -119,6 +125,7 @@
 		70EB074018E08C030006E6A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7019D72018E215BE002A7FC0 /* QuartzCore.framework */,
 				70EB074118E08C030006E6A7 /* Foundation.framework */,
 				70EB074318E08C030006E6A7 /* CoreGraphics.framework */,
 				70EB074518E08C030006E6A7 /* UIKit.framework */,
@@ -135,6 +142,8 @@
 				70EB075218E08C030006E6A7 /* AppDelegate.h */,
 				70EB075318E08C030006E6A7 /* AppDelegate.m */,
 				70EB075518E08C030006E6A7 /* Main.storyboard */,
+				7019D71D18E2127F002A7FC0 /* NLabel.h */,
+				7019D71E18E2127F002A7FC0 /* NLabel.m */,
 				70EB075B18E08C030006E6A7 /* MasterViewController.h */,
 				70EB075C18E08C030006E6A7 /* MasterViewController.m */,
 				7019D71218E1C4B1002A7FC0 /* NotificationTableViewCell.h */,
@@ -319,6 +328,7 @@
 				70EB075D18E08C030006E6A7 /* MasterViewController.m in Sources */,
 				70EB075418E08C030006E6A7 /* AppDelegate.m in Sources */,
 				7019D71118E0DE17002A7FC0 /* Notification.m in Sources */,
+				7019D71F18E2127F002A7FC0 /* NLabel.m in Sources */,
 				70EB075A18E08C030006E6A7 /* PNS.xcdatamodeld in Sources */,
 				7019D71518E1C4B1002A7FC0 /* NotificationTableViewCell.m in Sources */,
 				70EB075018E08C030006E6A7 /* main.m in Sources */,

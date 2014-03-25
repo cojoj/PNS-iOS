@@ -201,6 +201,7 @@
     Notification *notification = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.dateLabel.text = [notification.timeStamp description];
     cell.alertLabel.text = notification.alert;
+    [cell.alertLabel.layer setCornerRadius:5];
 }
 
 - (void)fetchAllNotifications
