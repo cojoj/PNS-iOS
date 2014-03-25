@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import <CoreData/CoreData.h>
+#import <AFHTTPRequestOperationManager.h>
 
 @interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate, UITextViewDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
+- (IBAction)register:(UIBarButtonItem *)sender;
 
 @end

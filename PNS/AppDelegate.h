@@ -16,6 +16,8 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (readonly, strong, nonatomic) NSString *ownerName;
+@property (readonly, strong, nonatomic) NSData *deviceToken;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
