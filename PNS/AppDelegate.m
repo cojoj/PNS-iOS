@@ -60,13 +60,6 @@
     MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
     
-    // Showing alert view for registration device on the server
-    if (![self hasEverBeenLaunched]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Register" message:@"Enter your name to register device" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Register", nil];
-        [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
-        [alert show];
-    }
-    
     return YES;
 }
 
@@ -120,6 +113,13 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    // Showing alert view for registration device on the server
+    if (![self hasEverBeenLaunched]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Register" message:@"Enter your name to register device" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Register", nil];
+        [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
+        [alert show];
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
